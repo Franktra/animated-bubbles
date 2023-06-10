@@ -5,3 +5,56 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Franktra/animated-bubbles.git
 git push -u origin main
+## copied code saved in py for unseen animated pack of rectangular gum walking, then blowinh bubbles that pop, revealiing the key words of the Action Framework (Action, Context, Prioritze) one at a time
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+# Function to update the plot for each frame
+def update(frame):
+    # Clear the current plot
+    ax.cla()
+
+    # Animation logic for each frame
+    if frame < 50:
+        # Animation for taking steps
+        x = frame / 10  # Adjust the x-coordinate for each step
+        y = 0  # Keep the y-coordinate constant
+        ax.plot(x, y, 'ro')  # Draw the character at (x, y) coordinates
+    elif frame < 100:
+        # Animation for blowing the bubble
+        # Increase the size of the eyes gradually
+        eye_size = (frame - 50) / 10
+        # Draw the character with enlarged eyes
+        ax.plot(5, 0, 'ro')  # Character position
+        ax.plot(4, 1, 'bo', markersize=eye_size)  # Left eye position
+        ax.plot(6, 1, 'bo', markersize=eye_size)  # Right eye position
+    elif frame < 150:
+        # Animation for the first bubble pop
+        # Draw the popped bubble with the word "Action"
+        ax.text(5, 0, 'Action', fontsize=12, ha='center', va='center')
+    elif frame < 200:
+        # Animation for the second bubble pop
+        # Draw the popped bubble with the word "Context"
+        ax.text(5, 0, 'Context', fontsize=12, ha='center', va='center')
+    elif frame < 250:
+        # Animation for the third bubble pop
+        # Draw the popped bubble with the word "Prioritize"
+        ax.text(5, 0, 'Prioritize', fontsize=12, ha='center', va='center')
+
+    # Add additional code for the sticky residue effect
+
+    # Set the limits of the plot
+    ax.set_xlim(0, 10)
+    ax.set_ylim(-2, 2)
+
+# Create the animation using FuncAnimation
+animation = FuncAnimation(fig, update, frames=300, interval=100)
+
+# Display the animation
+plt.show()
+
+# Save the animation as a GIF file
+animation.save('animation.gif', writer='pillow')

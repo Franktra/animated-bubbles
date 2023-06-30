@@ -1,7 +1,7 @@
-# animated-bubbles
-## detailed animation of a pack of rectangular gum walking, then blowing bubbles that pop to reveal key words
-## The pack of gum moves across the screen, blows bubbles, and words appear in the bubbles as they pop. The axis is turned off for better visual representation.
-Animated Action Framework Pack of Gum Popping Bubbles Revealing Key words
+# Animated-Bubbles
+## Detailed animation of a pack of rectangular gum walking, then blowing bubbles that pop to reveal keywords
+## The pack of gum moves across the screen blows bubbles, and words appear in the bubbles as they pop. The axis is turned off for better visual representation.
+Animated Action Framework Pack of Gum Popping Bubbles Revealing Keywords
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
